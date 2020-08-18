@@ -1,0 +1,34 @@
+
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        //google()はGoogleが提供しているソフトウェアの配布を行う為のサービスのリポジトリ、
+        // jcenter()はJFrogが提供しているソフトウェアの配布を行う為のサービスのリポジトリを見に行くという設定です。
+
+        google()
+        jcenter()
+
+
+    }
+    // dependenciesは実際に使いたいライブラリを指定します。
+    // ここに設定するライブラリは、それぞれのリポジトリで検索することができます。
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
